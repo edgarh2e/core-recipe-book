@@ -7,8 +7,6 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.practifarma.core.service.response.HeaderResponse.*;
-
 @Component
 public class CorsFilter implements Filter {
 

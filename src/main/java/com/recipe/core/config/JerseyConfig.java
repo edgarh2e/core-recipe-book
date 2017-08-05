@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.ws.rs.ApplicationPath;
 
 import com.recipe.core.service.RecipeEndpoint;
+import com.recipe.core.service.UserEndpoint;
 
 @Configuration
 @ApplicationPath("/service")
@@ -15,5 +16,6 @@ public class JerseyConfig extends ResourceConfig {
 
     private void registerEndpoints() {
         register(RecipeEndpoint.class);
+        register(UserEndpoint.class);
     }
 }

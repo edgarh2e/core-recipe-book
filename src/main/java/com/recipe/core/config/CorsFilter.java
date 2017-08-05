@@ -8,18 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-public class CorsFilter implements Filter {
+public class CorsFilter implements Filter, ConstantAttributes {
 
     @Value("${access.control.max.age}")
     private String MAX_AGE;
-
-    private static final String ACCESS_CONTROL_ALLOW_ORIGIN = "Access-Control-Allow-Origin";
-    private static final String ACCESS_CONTROL_ALLOW_METHODS = "Access-Control-Allow-Methods";
-    private static final String ACCESS_CONTROL_ALLOW_HEADER = "Access-Control-Allow-Headers";
-    public static final String ACCESS_CONTROL_MAX_AGE = "Access-Control-Max-Age";
-    private static final String ASTERISK = "*";
-    private static final String METHODS = "GET, POST";
-    private static final String HEADERS = "Content-Type, Authorization, Accept, X-Requested-With";
 
     public CorsFilter() { }
 

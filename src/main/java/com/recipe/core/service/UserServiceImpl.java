@@ -20,8 +20,8 @@ public class UserServiceImpl implements UserService {
         user.setPassword("p455w0rd");
         users.add(user);
         User user2 = new User();
-        user.setName("3dg4r");
-        user.setPassword("p455w0rd1");
+        user2.setName("3dg4r");
+        user2.setPassword("p455w0rd1");
         users.add(user2);
         return users;
     }

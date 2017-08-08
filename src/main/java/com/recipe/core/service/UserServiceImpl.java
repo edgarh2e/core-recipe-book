@@ -1,6 +1,8 @@
 package com.recipe.core.service;
 
 import com.recipe.core.domain.User;
+import com.recipe.core.repository.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +13,9 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public List<User> getUsers() {

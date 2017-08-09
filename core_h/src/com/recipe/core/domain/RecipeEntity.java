@@ -1,36 +1,27 @@
-package com.recipe.core.repository;
+package com.recipe.core.domain;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "recipe", schema = "recipe_book")
+@Table(name = "recipe", schema = "recipe_book", catalog = "")
 public class RecipeEntity {
+    private long id;
+    private String name;
+    private String description;
+    private String imageUrl;
 
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Basic
-    @Column(name = "name", nullable = false, length = 100)
-    private String name;
-
-    @Basic
-    @Column(name = "description", nullable = false, length = 250)
-    private String description;
-
-    @Basic
-    @Column(name = "image_url", nullable = false, length = 500)
-    private String imageUrl;
-
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
+    @Basic
+    @Column(name = "name", nullable = false, length = 100)
     public String getName() {
         return name;
     }
@@ -39,6 +30,8 @@ public class RecipeEntity {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "description", nullable = false, length = 250)
     public String getDescription() {
         return description;
     }
@@ -47,6 +40,8 @@ public class RecipeEntity {
         this.description = description;
     }
 
+    @Basic
+    @Column(name = "image_url", nullable = false, length = 500)
     public String getImageUrl() {
         return imageUrl;
     }

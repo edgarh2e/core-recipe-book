@@ -17,3 +17,7 @@ ALTER TABLE recipe_book.recipe MODIFY imageUrl VARCHAR(500) NOT NULL;
 
 --changeset edgarh2e:3
 ALTER TABLE recipe CHANGE imageUrl image_url VARCHAR(500) NOT NULL;
+
+--changeset edgarh2e:4
+INSERT INTO recipe_book.user (name, password) VALUES ('edgar@mail.com', 'p455w0rd');
+INSERT INTO recipe_book.user (name, password) VALUES ('mario@mail.com', 'p455w0rd');

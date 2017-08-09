@@ -31,6 +31,10 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public void addRecipe(Recipe recipe) {
-
+        RecipeEntity recipeEntity = new RecipeEntity();
+        recipeEntity.setName(recipe.getName());
+        recipeEntity.setDescription(recipe.getDescription());
+        recipeEntity.setImageUrl(recipe.getImageUrl());
+        recipeDao.saveAndFlush(recipeEntity);
     }
 }

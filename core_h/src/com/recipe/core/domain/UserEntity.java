@@ -1,32 +1,26 @@
-package com.recipe.core.repository;
+package com.recipe.core.domain;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user", schema = "recipe_book")
+@Table(name = "user", schema = "recipe_book", catalog = "")
 public class UserEntity {
+    private long id;
+    private String name;
+    private String password;
 
     @Id
     @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Basic
-    @Column(name = "name", nullable = false, length = 50)
-    private String name;
-
-    @Basic
-    @Column(name = "password", nullable = false, length = 50)
-    private String password;
-
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
+    @Basic
+    @Column(name = "name", nullable = false, length = 50)
     public String getName() {
         return name;
     }
@@ -35,6 +29,8 @@ public class UserEntity {
         this.name = name;
     }
 
+    @Basic
+    @Column(name = "password", nullable = false, length = 50)
     public String getPassword() {
         return password;
     }

@@ -20,14 +20,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers() {
         List<User> users = new ArrayList<>();
-        User user = new User();
-        user.setName("m4r10");
-        user.setPassword("p455w0rd");
-        users.add(user);
-        User user2 = new User();
-        user2.setName("3dg4r");
-        user2.setPassword("p455w0rd1");
-        users.add(user2);
+        List<UserEntity> usersEntities = userDao.findAll();
+        for (UserEntity userEntity : usersEntities) {
+            User user = new User();
+            user.setName(userEntity.getName());
+            user.setPassword(userEntity.getPassword());
+            users.add(user);
+        }
         return users;
     }
+
 }

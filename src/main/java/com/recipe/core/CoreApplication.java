@@ -11,7 +11,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 @SpringBootApplication
 @ComponentScan({"com.recipe.core"})
 @PropertySources({
-		@PropertySource("classpath:application.properties"),
+		@PropertySource("classpath:resources/application.properties"),
 		@PropertySource(value = "file:${external.config}", ignoreResourceNotFound = true)
 })
 public class CoreApplication extends SpringBootServletInitializer {

@@ -42,3 +42,14 @@ dependencies {
 	testCompile "org.spockframework:spock-core:1.1-groovy-2.4"
 	testCompile "org.springframework.boot:spring-boot-test:$springBootVersion"
 }
+
+sourceSets {
+	main {
+		java {
+			srcDirs = ["src/main/java"]
+		}
+		resources {
+			srcDirs = ["src/main/resources"]
+		}
+	}
+}

@@ -36,17 +36,20 @@ class RecipeServiceImplTest extends Specification {
 
     def "Add Recipe"() {
         given:"Dado lo siguiente"
+            Recipe newRecipe = new Recipe()
+            newRecipe.name=_name
+            newRecipe.description=_description
+            newRecipe.imageUrl=_imageUrl
+        and:"y"
             def recipeDaoMock = Mock(RecipeDao)
             recipeService.recipeDao = recipeDaoMock
-            Recipe newRecipe = new Recipe()
-        and:"y"
-            newRecipe.id=5
-            newRecipe.name="receta 5"
-            newRecipe.description="receta 5"
-            newRecipe.imageUrl="www.url5.com.mx"
         when:"cuando"
             recipeService.addRecipe(newRecipe)
         then:"entonces"
-            1 * recipeDaoMock.saveAndFlush(_)
+            1 * recipeDaoMock.saveAndFlush(_) >>1L
+        where:"donde"
+            _name << ["nombre1", 'nombre2']
+            _description << ['receta1','receta2']
+            _imageUrl << ['www.url1.com', 'www.url2.com']
     }
 }
